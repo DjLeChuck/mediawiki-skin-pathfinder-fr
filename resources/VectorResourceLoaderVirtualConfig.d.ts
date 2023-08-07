@@ -1,4 +1,4 @@
 /** See Vector\Hooks::getVectorResourceLoaderConfig */
 interface VectorResourceLoaderVirtualConfig {
-	wgVectorSearchApiUrl: string;
+	wgPathfinderFRSearchApiUrl: string;
 }

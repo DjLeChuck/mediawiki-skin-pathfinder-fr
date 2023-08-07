@@ -73,7 +73,7 @@ final class LimitedWidthContentRequirement implements Requirement {
 	}
 
 	/**
-	 * Per the $options configuration (for use with $wgVectorMaxWidthOptions)
+	 * Per the $options configuration (for use with $wgPathfinderFRMaxWidthOptions)
 	 * determine whether max-width should be disabled on the page.
 	 * For the main page: Check the value of $options['exclude']['mainpage']
 	 * For all other pages, the following will happen:
@@ -151,7 +151,7 @@ final class LimitedWidthContentRequirement implements Requirement {
 	 */
 	public function isMet(): bool {
 		return $this->title && !self::shouldDisableMaxWidth(
-			$this->config->get( 'VectorMaxWidthOptions' ),
+			$this->config->get ('PathfinderFRMaxWidthOptions' ),
 			$this->title,
 			$this->request
 		);

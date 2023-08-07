@@ -140,9 +140,9 @@ function markLoadEnd( startMarker, endMarker, measureMarker ) {
 function initSearchLoader( document ) {
 	var searchBoxes = document.querySelectorAll( '.vector-search-box' );
 
-	// Allow developers to defined $wgVectorSearchApiUrl in LocalSettings to target different APIs
-	if ( config.wgVectorSearchApiUrl ) {
-		mw.config.set( 'wgVectorSearchApiUrl', config.wgVectorSearchApiUrl );
+	// Allow developers to defined $wgPathfinderFRSearchApiUrl in LocalSettings to target different APIs
+	if ( config.wgPathfinderFRSearchApiUrl ) {
+		mw.config.set( 'wgPathfinderFRSearchApiUrl', config.wgPathfinderFRSearchApiUrl );
 	}
 
 	if ( !searchBoxes.length ) {

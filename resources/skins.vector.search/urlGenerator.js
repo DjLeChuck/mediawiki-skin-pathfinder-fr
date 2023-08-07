@@ -27,8 +27,8 @@
  */
 function urlGenerator( config ) {
 	// TODO: This is a placeholder for enabling customization of the URL generator.
-	// wgVectorSearchUrlGenerator has not been defined as a config variable yet.
-	return config.get( 'wgVectorSearchUrlGenerator', {
+	// wgPathfinderFRSearchUrlGenerator has not been defined as a config variable yet.
+	return config.get( 'wgPathfinderFRSearchUrlGenerator', {
 		/**
 		 * @type {generateUrl}
 		 */

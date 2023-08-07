@@ -11,7 +11,7 @@ const configMock = {
 		if ( key === 'wgScript' ) {
 			return '/w/index.php';
 		}
-		if ( key === 'wgVectorSearchApiUrl' ) {
+		if ( key === 'wgPathfinderFRSearchApiUrl' ) {
 			return 'https://en.wikipedia.org/w/rest.php';
 		}
 		return fallback;

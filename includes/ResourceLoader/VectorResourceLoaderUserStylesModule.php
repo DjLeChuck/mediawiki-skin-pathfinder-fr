@@ -15,7 +15,7 @@ class VectorResourceLoaderUserStylesModule extends RL\UserStylesModule {
 		$pages = [];
 		$config = $this->getConfig();
 		if ( $context->getSkin() === Constants::SKIN_NAME_MODERN &&
-			$config->get( 'VectorShareUserScripts' ) &&
+			$config->get ('PathfinderFRShareUserScripts' ) &&
 			$config->get( MainConfigNames::AllowUserCss ) &&
 			$user->isRegistered()
 		) {

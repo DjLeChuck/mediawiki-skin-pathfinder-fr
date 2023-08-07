@@ -62,20 +62,20 @@ class Hooks implements
 			return $ab;
 		}
 		if ( !array_key_exists( 'buckets', $ab ) ) {
-			throw new RuntimeException( 'Invalid VectorWebABTestEnrollment value: Must contain buckets key.' );
+			throw new RuntimeException( 'Invalid PathfinderFRWebABTestEnrollment value: Must contain buckets key.' );
 		}
 		if ( !array_key_exists( 'unsampled', $ab['buckets'] ) ) {
-			throw new RuntimeException( 'Invalid VectorWebABTestEnrollment value: Must define an `unsampled` bucket.' );
+			throw new RuntimeException( 'Invalid PathfinderFRWebABTestEnrollment value: Must define an `unsampled` bucket.' );
 		} else {
 			// check bucket values.
 			foreach ( $ab['buckets'] as $bucketName => $bucketDefinition ) {
 				if ( !is_array( $bucketDefinition ) ) {
-					throw new RuntimeException( 'Invalid VectorWebABTestEnrollment value: Buckets should be arrays' );
+					throw new RuntimeException( 'Invalid PathfinderFRWebABTestEnrollment value: Buckets should be arrays' );
 				}
 				$samplingRate = $bucketDefinition['samplingRate'];
 				if ( is_string( $samplingRate ) ) {
 					throw new RuntimeException(
-						'Invalid VectorWebABTestEnrollment value: Sampling rate should be number between 0 and 1.'
+						'Invalid PathfinderFRWebABTestEnrollment value: Sampling rate should be number between 0 and 1.'
 					);
 				}
 			}
@@ -95,8 +95,8 @@ class Hooks implements
 		Config $config
 	) {
 		return [
-			'wgVectorSearchApiUrl' => $config->get( 'VectorSearchApiUrl' ),
-			'wgVectorWebABTestEnrollment' => self::getActiveABTest( $config ),
+			'wgPathfinderFRSearchApiUrl' => $config->get ('PathfinderFRSearchApiUrl' ),
+			'wgPathfinderFRWebABTestEnrollment' => self::getActiveABTest( $config ),
 		];
 	}
 
@@ -112,7 +112,7 @@ class Hooks implements
 		RL\Context $context,
 		Config $config
 	): array {
-		$result = $config->get( 'VectorWvuiSearchOptions' );
+		$result = $config->get ('PathfinderFRWvuiSearchOptions' );
 		$result['highlightQuery'] =
 			VectorServices::getLanguageService()->canWordsBeSplitSafely( $context->getLanguage() );
 
@@ -579,7 +579,7 @@ class Hooks implements
 		}
 
 		if (
-			$sk->getConfig()->get( 'VectorUseIconWatch' ) &&
+			$sk->getConfig()->get ('PathfinderFRUseIconWatch' ) &&
 			$title && $title->canExist()
 		) {
 			self::updateActionsMenu( $content_navigation );
@@ -604,7 +604,7 @@ class Hooks implements
 	 */
 	public function onResourceLoaderSiteStylesModulePages( $skin, &$pages ): void {
 		$config = MediaWikiServices::getInstance()->getMainConfig();
-		if ( $skin === Constants::SKIN_NAME_MODERN && $config->get( 'VectorShareUserScripts' ) ) {
+		if ( $skin === Constants::SKIN_NAME_MODERN && $config->get ('PathfinderFRShareUserScripts' ) ) {
 			$pages['MediaWiki:Vector.css'] = [ 'type' => 'style' ];
 		}
 	}
@@ -617,7 +617,7 @@ class Hooks implements
 	 */
 	public function onResourceLoaderSiteModulePages( $skin, &$pages ): void {
 		$config = MediaWikiServices::getInstance()->getMainConfig();
-		if ( $skin === Constants::SKIN_NAME_MODERN && $config->get( 'VectorShareUserScripts' ) ) {
+		if ( $skin === Constants::SKIN_NAME_MODERN && $config->get ('PathfinderFRShareUserScripts' ) ) {
 			$pages['MediaWiki:Vector.js'] = [ 'type' => 'script' ];
 		}
 	}
@@ -693,7 +693,7 @@ class Hooks implements
 			// user is anonymous
 			$user = $context->getUser();
 			$config = $context->getConfig();
-			$titles = $config->get( 'Vector2022PreviewPages' );
+			$titles = $config->get ('PathfinderFR2022PreviewPages' );
 			$title = $context->getTitle();
 			$titleText = $title ? $title->getPrefixedText() : null;
 			if ( $titleText && $user->isAnon() && in_array( $titleText, $titles ) ) {
@@ -707,7 +707,7 @@ class Hooks implements
 	 * for adding config to the page.
 	 * Adds config variables to JS that depend on current page/request.
 	 *
-	 * Adds a config flag that can disable saving the VectorSidebarVisible
+	 * Adds a config flag that can disable saving the PathfinderFRSidebarVisible
 	 * user preference when the sidebar menu icon is clicked.
 	 *
 	 * @param array &$vars Array of variables to be added into the output.
@@ -723,13 +723,13 @@ class Hooks implements
 		$user = $out->getUser();
 
 		if ( $user->isRegistered() && self::isSkinVersionLegacy( $skinName ) ) {
-			$vars[ 'wgVectorDisableSidebarPersistence' ] =
+			$vars[ 'wgPathfinderFRDisableSidebarPersistence' ] =
 				$config->get(
 					Constants::CONFIG_KEY_DISABLE_SIDEBAR_PERSISTENCE
 				);
 		}
 		// Must be exposed to CentralNotice banners via mw.config
-		$vars[ 'wgVector2022PreviewPages' ] = $config->get( 'Vector2022PreviewPages' );
+		$vars[ 'wgPathfinderFR2022PreviewPages' ] = $config->get ('PathfinderFR2022PreviewPages' );
 	}
 
 	/**

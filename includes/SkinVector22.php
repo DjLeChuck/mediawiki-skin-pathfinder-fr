@@ -43,7 +43,7 @@ class SkinVector22 extends SkinMustache {
 	 */
 	public function isResponsive() {
 		// Check it's enabled by user preference and configuration
-		$responsive = parent::isResponsive() && $this->getConfig()->get( 'VectorResponsive' );
+		$responsive = parent::isResponsive() && $this->getConfig()->get ('PathfinderFRResponsive' );
 		// For historic reasons, the viewport is added when Vector is loaded on the mobile
 		// domain. This is only possible for 3rd parties or by useskin parameter as there is
 		// no preference for changing mobile skin. Only need to check if $responsive is falsey.
@@ -331,7 +331,7 @@ class SkinVector22 extends SkinMustache {
 			self::extractPageToolsFromSidebar( $sidebar, $pageToolsMenu );
 		}
 
-		$hasAddTopicButton = $config->get( 'VectorPromoteAddTopic' ) &&
+		$hasAddTopicButton = $config->get ('PathfinderFRPromoteAddTopic' ) &&
 			$this->removeAddTopicButton( $parentData );
 
 		$langButtonClass = $langData['class'] ?? '';

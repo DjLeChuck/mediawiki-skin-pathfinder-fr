@@ -10,7 +10,7 @@ const
 	pinnableElement = require( './pinnableElement.js' ),
 	features = require( './features.js' ),
 	deferUntilFrame = require( './deferUntilFrame.js' ),
-	ABTestConfig = require( /** @type {string} */ ( './config.json' ) ).wgVectorWebABTestEnrollment || {},
+	ABTestConfig = require( /** @type {string} */ ( './config.json' ) ).wgPathfinderFRWebABTestEnrollment || {},
 	STICKY_HEADER_VISIBLE_CLASS = 'vector-sticky-header-visible',
 	TOC_ID = 'vector-toc',
 	BODY_CONTENT_ID = 'bodyContent',

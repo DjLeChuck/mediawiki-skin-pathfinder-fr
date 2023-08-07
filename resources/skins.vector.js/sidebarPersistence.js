@@ -9,7 +9,7 @@ var /** @type {MwApi} */api,
 	SIDEBAR_BUTTON_ID = 'mw-sidebar-button',
 	debounce = require( /** @type {string} */ ( 'mediawiki.util' ) ).debounce,
 	SIDEBAR_CHECKBOX_ID = 'mw-sidebar-checkbox',
-	SIDEBAR_PREFERENCE_NAME = 'VectorSidebarVisible';
+	SIDEBAR_PREFERENCE_NAME = 'PathfinderFRSidebarVisible';
 
 /**
  * Checks if persistent is enabled at current time.
@@ -106,7 +106,7 @@ function init() {
 		),
 		button = window.document.getElementById( SIDEBAR_BUTTON_ID );
 
-	if ( mw.config.get( 'wgUserName' ) && !mw.config.get( 'wgVectorDisableSidebarPersistence' ) ) {
+	if ( mw.config.get( 'wgUserName' ) && !mw.config.get( 'wgPathfinderFRDisableSidebarPersistence' ) ) {
 		bindSidebarClickEvent( checkbox, button );
 	}
 

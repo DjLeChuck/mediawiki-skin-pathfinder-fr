@@ -42,19 +42,19 @@ final class Constants {
 	 * @var string
 	 */
 	public const CONFIG_KEY_DEFAULT_SKIN_VERSION_FOR_NEW_ACCOUNTS =
-		'VectorDefaultSkinVersionForNewAccounts';
+		'PathfinderFRDefaultSkinVersionForNewAccounts';
 
 	/**
 	 * @var string
 	 */
 	public const CONFIG_KEY_DEFAULT_SIDEBAR_VISIBLE_FOR_AUTHORISED_USER =
-		'VectorDefaultSidebarVisibleForAuthorisedUser';
+		'PathfinderFRDefaultSidebarVisibleForAuthorisedUser';
 
 	/**
 	 * @var string
 	 */
 	public const CONFIG_KEY_DEFAULT_SIDEBAR_VISIBLE_FOR_ANONYMOUS_USER =
-		'VectorDefaultSidebarVisibleForAnonymousUser';
+		'PathfinderFRDefaultSidebarVisibleForAnonymousUser';
 
 	/**
 	 * @var string
@@ -64,7 +64,7 @@ final class Constants {
 	/**
 	 * @var string
 	 */
-	public const PREF_KEY_SIDEBAR_VISIBLE = 'VectorSidebarVisible';
+	public const PREF_KEY_SIDEBAR_VISIBLE = 'PathfinderFRSidebarVisible';
 
 	// These are used in the Feature Management System.
 	/**
@@ -91,12 +91,12 @@ final class Constants {
 	/**
 	 * @var string
 	 */
-	public const CONFIG_KEY_DISABLE_SIDEBAR_PERSISTENCE = 'VectorDisableSidebarPersistence';
+	public const CONFIG_KEY_DISABLE_SIDEBAR_PERSISTENCE = 'PathfinderFRDisableSidebarPersistence';
 
 	/**
 	 * @var string
 	 */
-	public const CONFIG_KEY_LANGUAGE_IN_HEADER = 'VectorLanguageInHeader';
+	public const CONFIG_KEY_LANGUAGE_IN_HEADER = 'PathfinderFRLanguageInHeader';
 
 	/**
 	 * @var string
@@ -106,7 +106,7 @@ final class Constants {
 	/**
 	 * @var string
 	 */
-	public const CONFIG_STICKY_HEADER = 'VectorStickyHeader';
+	public const CONFIG_STICKY_HEADER = 'PathfinderFRStickyHeader';
 
 	/**
 	 * @var string
@@ -123,7 +123,7 @@ final class Constants {
 	 *
 	 * @var string
 	 */
-	public const CONFIG_WEB_AB_TEST_ENROLLMENT = 'VectorWebABTestEnrollment';
+	public const CONFIG_WEB_AB_TEST_ENROLLMENT = 'PathfinderFRWebABTestEnrollment';
 
 	/**
 	 * The `mediawiki.searchSuggest` protocol piece of the SearchSatisfaction instrumention reads
@@ -163,7 +163,7 @@ final class Constants {
 	/**
 	 * @var string
 	 */
-	public const CONFIG_LANGUAGE_IN_MAIN_PAGE_HEADER = 'VectorLanguageInMainPageHeader';
+	public const CONFIG_LANGUAGE_IN_MAIN_PAGE_HEADER = 'PathfinderFRLanguageInMainPageHeader';
 
 	/**
 	 * @var string
@@ -178,7 +178,7 @@ final class Constants {
 	/**
 	 * @var string
 	 */
-	public const CONFIG_LANGUAGE_ALERT_IN_SIDEBAR = 'VectorLanguageAlertInSidebar';
+	public const CONFIG_LANGUAGE_ALERT_IN_SIDEBAR = 'PathfinderFRLanguageAlertInSidebar';
 
 	/**
 	 * @var string
@@ -193,7 +193,7 @@ final class Constants {
 	/**
 	 * @var string
 	 */
-	public const CONFIG_PAGE_TOOLS = 'VectorPageTools';
+	public const CONFIG_PAGE_TOOLS = 'PathfinderFRPageTools';
 
 	/**
 	 * @var string

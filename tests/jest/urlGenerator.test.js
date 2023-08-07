@@ -40,7 +40,7 @@ describe( 'urlGenerator', () => {
 		const customGenerator = {};
 		const config = {
 			get: jest.fn().mockImplementation( ( key, fallback ) => {
-				if ( key === 'wgVectorSearchUrlGenerator' ) {
+				if ( key === 'wgPathfinderFRSearchUrlGenerator' ) {
 					return customGenerator;
 				}
 				return fallback;

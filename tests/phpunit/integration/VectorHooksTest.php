@@ -57,17 +57,17 @@ class VectorHooksTest extends MediaWikiIntegrationTestCase {
 		return [
 			[
 				[
-					'VectorWebABTestEnrollment' => [],
-					'VectorSearchApiUrl' => 'https://en.wikipedia.org/w/rest.php'
+					'PathfinderFRWebABTestEnrollment' => [],
+					'PathfinderFRSearchApiUrl' => 'https://en.wikipedia.org/w/rest.php'
 				],
 				[
-					'wgVectorSearchApiUrl' => 'https://en.wikipedia.org/w/rest.php',
-					'wgVectorWebABTestEnrollment' => [],
+					'wgPathfinderFRSearchApiUrl' => 'https://en.wikipedia.org/w/rest.php',
+					'wgVPathfinderFRWebABTestEnrollment' => [],
 				]
 			],
 			[
 				[
-					'VectorWebABTestEnrollment' => [
+					'PathfinderFRWebABTestEnrollment' => [
 						'name' => 'vector.sticky_header',
 						'enabled' => true,
 						'buckets' => [
@@ -85,11 +85,11 @@ class VectorHooksTest extends MediaWikiIntegrationTestCase {
 								],
 						],
 					],
-					'VectorSearchApiUrl' => 'https://en.wikipedia.org/w/rest.php'
+					'PathfinderFRSearchApiUrl' => 'https://en.wikipedia.org/w/rest.php'
 				],
 				[
-					'wgVectorSearchApiUrl' => 'https://en.wikipedia.org/w/rest.php',
-					'wgVectorWebABTestEnrollment' => [
+					'wgPathfinderFRSearchApiUrl' => 'https://en.wikipedia.org/w/rest.php',
+					'wgPathfinderFRWebABTestEnrollment' => [
 						'name' => 'vector.sticky_header',
 						'enabled' => true,
 						'buckets' => [
@@ -117,8 +117,8 @@ class VectorHooksTest extends MediaWikiIntegrationTestCase {
 			# Bad experiment (no buckets)
 			[
 				[
-					'VectorSearchApiUrl' => 'https://en.wikipedia.org/w/rest.php',
-					'VectorWebABTestEnrollment' => [
+					'PathfinderFRSearchApiUrl' => 'https://en.wikipedia.org/w/rest.php',
+					'PathfinderFRWebABTestEnrollment' => [
 						'name' => 'vector.sticky_header',
 						'enabled' => true,
 					],
@@ -127,8 +127,8 @@ class VectorHooksTest extends MediaWikiIntegrationTestCase {
 			# Bad experiment (no unsampled bucket)
 			[
 				[
-					'VectorSearchApiUrl' => 'https://en.wikipedia.org/w/rest.php',
-					'VectorWebABTestEnrollment' => [
+					'PathfinderFRSearchApiUrl' => 'https://en.wikipedia.org/w/rest.php',
+					'PathfinderFRWebABTestEnrollment' => [
 						'name' => 'vector.sticky_header',
 						'enabled' => true,
 						'buckets' => [
@@ -142,8 +142,8 @@ class VectorHooksTest extends MediaWikiIntegrationTestCase {
 			# Bad experiment (wrong format)
 			[
 				[
-					'VectorSearchApiUrl' => 'https://en.wikipedia.org/w/rest.php',
-					'VectorWebABTestEnrollment' => [
+					'PathfinderFRSearchApiUrl' => 'https://en.wikipedia.org/w/rest.php',
+					'PathfinderFRWebABTestEnrollment' => [
 						'name' => 'vector.sticky_header',
 						'enabled' => true,
 						'buckets' => [
@@ -155,8 +155,8 @@ class VectorHooksTest extends MediaWikiIntegrationTestCase {
 			# Bad experiment (samplingRate defined as string)
 			[
 				[
-					'VectorSearchApiUrl' => 'https://en.wikipedia.org/w/rest.php',
-					'VectorWebABTestEnrollment' => [
+					'PathfinderFRSearchApiUrl' => 'https://en.wikipedia.org/w/rest.php',
+					'PathfinderFRWebABTestEnrollment' => [
 						'name' => 'vector.sticky_header',
 						'enabled' => true,
 						'buckets' => [
@@ -331,7 +331,7 @@ class VectorHooksTest extends MediaWikiIntegrationTestCase {
 		$shouldDisableMaxWidth
 	) {
 		$requirement = new LimitedWidthContentRequirement(
-			new HashConfig( [ 'VectorMaxWidthOptions' => $options ] ),
+			new HashConfig( [ 'PathfinderFRMaxWidthOptions' => $options ] ),
 			new FauxRequest( $requestValues ),
 			$title
 		);
@@ -377,7 +377,7 @@ class VectorHooksTest extends MediaWikiIntegrationTestCase {
 	 */
 	public function testOnLocalUserCreatedLegacy() {
 		$this->setMwGlobals( [
-			'wgVectorDefaultSkinVersionForNewAccounts' => Constants::SKIN_VERSION_LEGACY,
+			'wgPathfinderFRDefaultSkinVersionForNewAccounts' => Constants::SKIN_VERSION_LEGACY,
 		] );
 
 		$user = $this->createMock( User::class );
@@ -398,7 +398,7 @@ class VectorHooksTest extends MediaWikiIntegrationTestCase {
 	 */
 	public function testOnLocalUserCreatedLatest() {
 		$this->setMwGlobals( [
-			'wgVectorDefaultSkinVersionForNewAccounts' => Constants::SKIN_VERSION_LATEST,
+			'wgPathfinderFRDefaultSkinVersionForNewAccounts' => Constants::SKIN_VERSION_LATEST,
 		] );
 
 		$user = $this->createMock( User::class );
@@ -419,7 +419,7 @@ class VectorHooksTest extends MediaWikiIntegrationTestCase {
 	 */
 	public function testOnSkinTemplateNavigation() {
 		$this->setMwGlobals( [
-			'wgVectorUseIconWatch' => true,
+			'wgPathfinderFRUseIconWatch' => true,
 		] );
 		$skin = new SkinVector22( [ 'name' => 'vector' ] );
 		$skin->getContext()->setTitle( Title::newFromText( 'Foo' ) );

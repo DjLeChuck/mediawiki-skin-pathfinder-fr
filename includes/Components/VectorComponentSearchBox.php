@@ -43,7 +43,7 @@ class VectorComponentSearchBox implements VectorComponent {
 	 * @return bool
 	 */
 	private function doesSearchHaveThumbnails(): bool {
-		return $this->getConfig()->get( 'VectorWvuiSearchOptions' )['showThumbnail'];
+		return $this->getConfig()->get ('PathfinderFRWvuiSearchOptions' )['showThumbnail'];
 	}
 
 	/**

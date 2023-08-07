@@ -91,12 +91,12 @@ function adaptApiResponse( config, query, restResponse, showDescription ) {
  * @return {SearchClient}
  */
 function restSearchClient( config ) {
-	return config.get( 'wgVectorSearchClient', {
+	return config.get( 'wgPathfinderFRSearchClient', {
 		/**
 		 * @type {fetchByTitle}
 		 */
 		fetchByTitle: ( q, limit = 10, showDescription = true ) => {
-			const searchApiUrl = config.get( 'wgVectorSearchApiUrl',
+			const searchApiUrl = config.get( 'wgPathfinderFRSearchApiUrl',
 				config.get( 'wgScriptPath' ) + '/rest.php'
 			);
 			const params = { q, limit };
