@@ -1,5 +1,5 @@
 {
-	"name": "Vector",
+	"name": "PathfinderFR",
 	"private": true,
 	"scripts": {
 		"start": "bash dev-scripts/setup-storybook.sh && start-storybook --quiet -p 6006 -s resources/skins.vector.styles",
@@ -19,7 +19,6 @@
 		"minify-svg": "svgo --config=.svgo.config.js --quiet --recursive --folder resources/",
 		"pre-commit": "[ \"${PRE_COMMIT:-1}\" -eq 0 ] || npm -s t"
 	},
-	"pre-commit": "pre-commit",
 	"peerDependencies": {
 		"babel-core": "6.26.3"
 	},

@@ -86,11 +86,11 @@ class VectorComponentTableOfContents implements VectorComponent {
 		return $pinnableElement->getTemplateData() +
 			array_merge( $this->tocData, [
 			'is-vector-toc-beginning-enabled' => $this->config->get(
-				'VectorTableOfContentsBeginning'
+				'PathfinderFRTableOfContentsBeginning'
 			),
 			'vector-is-collapse-sections-enabled' =>
 				$this->tocData[ 'number-section-count'] >= $this->config->get(
-					'VectorTableOfContentsCollapseAtCount'
+					'PathfinderFRTableOfContentsCollapseAtCount'
 				),
 			'data-pinnable-header' => $this->pinnableHeader->getTemplateData(),
 		] );

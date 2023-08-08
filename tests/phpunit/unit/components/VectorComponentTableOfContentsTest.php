@@ -36,8 +36,8 @@ class VectorComponentTableOfContentsTest extends \MediaWikiUnitTestCase {
 
 	public function provideGetTocData() {
 		$config = [
-			'VectorTableOfContentsBeginning' => true,
-			'VectorTableOfContentsCollapseAtCount' => 1
+			'PathfinderFRTableOfContentsBeginning' => true,
+			'PathfinderFRTableOfContentsCollapseAtCount' => 1
 		];
 		$tocData = [
 			'number-section-count' => 2,
@@ -107,9 +107,9 @@ class VectorComponentTableOfContentsTest extends \MediaWikiUnitTestCase {
 		];
 
 		$expectedConfigData = [
-			'is-vector-toc-beginning-enabled' => $config[ 'VectorTableOfContentsBeginning' ],
+			'is-vector-toc-beginning-enabled' => $config[ 'PathfinderFRTableOfContentsBeginning' ],
 			'vector-is-collapse-sections-enabled' =>
-				$tocData[ 'number-section-count' ] >= $config[ 'VectorTableOfContentsCollapseAtCount' ],
+				$tocData[ 'number-section-count' ] >= $config[ 'PathfinderFRTableOfContentsCollapseAtCount' ],
 			'id' => 'vector-toc',
 			'data-pinnable-header' => [
 				'is-pinned' => true,
@@ -134,7 +134,7 @@ class VectorComponentTableOfContentsTest extends \MediaWikiUnitTestCase {
 			// When number of multiple sections is lower than configured value
 			[
 				$tocData,
-				array_merge( $config, [ 'VectorTableOfContentsCollapseAtCount' => 3 ] ),
+				array_merge( $config, [ 'PathfinderFRTableOfContentsCollapseAtCount' => 3 ] ),
 				// 'vector-is-collapse-sections-enabled' value is false
 				array_merge( $tocData, $expectedConfigData, [
 					'vector-is-collapse-sections-enabled' => false
@@ -143,21 +143,21 @@ class VectorComponentTableOfContentsTest extends \MediaWikiUnitTestCase {
 			// When number of multiple sections is equal to the configured value
 			[
 				$tocData,
-				array_merge( $config, [ 'VectorTableOfContentsCollapseAtCount' => 2 ] ),
+				array_merge( $config, [ 'PathfinderFRTableOfContentsCollapseAtCount' => 2 ] ),
 				// 'vector-is-collapse-sections-enabled' value is true
 				array_merge( $tocData, $expectedConfigData )
 			],
 			// When number of multiple sections is higher than configured value
 			[
 				$tocData,
-				array_merge( $config, [ 'VectorTableOfContentsCollapseAtCount' => 1 ] ),
+				array_merge( $config, [ 'PathfinderFRTableOfContentsCollapseAtCount' => 1 ] ),
 				// 'vector-is-collapse-sections-enabled' value is true
 				array_merge( $tocData, $expectedConfigData )
 			],
 			// When "Beginning" TOC section is configured to be turned off
 			[
 				$tocData,
-				array_merge( $config, [ 'VectorTableOfContentsBeginning' => false ] ),
+				array_merge( $config, [ 'PathfinderFRTableOfContentsBeginning' => false ] ),
 				// 'is-vector-toc-beginning-enabled' value is false
 				array_merge( $tocData, $expectedConfigData, [
 					'is-vector-toc-beginning-enabled' => false

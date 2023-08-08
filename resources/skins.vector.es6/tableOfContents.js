@@ -573,8 +573,8 @@ module.exports = function tableOfContents( props ) {
 		return {
 			'msg-vector-toc-beginning': mw.message( 'vector-toc-beginning' ).text(),
 			'array-sections': getTableOfContentsSectionsData( sections, 1 ),
-			'vector-is-collapse-sections-enabled': sections.length >= tableOfContentsConfig.VectorTableOfContentsCollapseAtCount,
-			'is-vector-toc-beginning-enabled': tableOfContentsConfig.VectorTableOfContentsBeginning
+			'vector-is-collapse-sections-enabled': sections.length >= tableOfContentsConfig.PathfinderFRTableOfContentsCollapseAtCount,
+			'is-vector-toc-beginning-enabled': tableOfContentsConfig.PathfinderFRTableOfContentsBeginning
 		};
 	}
 
