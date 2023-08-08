@@ -16,6 +16,16 @@
 	.firstHeading {
 		flex-grow: 1;
 		border: 0;
+
+		//background: transparent url(../common/images/title-before.png) no-repeat left top;
+		color: @black-coffee;
+
+		&::before {
+			content: url(../common/images/title-before.png);
+			margin-right: 5px;
+			display: inline-block;
+			vertical-align: middle;
+		}
 	}
 
 	.vector-page-titlebar-toc.ve-active {
