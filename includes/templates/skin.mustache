@@ -74,6 +74,30 @@
 					{{#is-page-tools-enabled}}{{#is-language-in-content-bottom}}
 						{{#data-lang-btn}}{{>LanguageDropdown}}{{/data-lang-btn}}
 					{{/is-language-in-content-bottom}}{{/is-page-tools-enabled}}
+
+          {{#is-article}}
+            <div class="content-licences">
+              <p>
+                Le contenu officiel de ce wiki appartient à et a été utilisé avec l’autorisation de
+                <a href="https://black-book-editions.fr/" title="Black Book Editions" target="_blank">Black Book Editions</a>.
+              </p>
+              <p>
+                Pathfinder-RPG est une création de
+                <a href="https://paizo.com/" title="Paizo Publishing" target="_blank">Paizo Publishing</a>.
+              </p>
+              <p>
+                Vous pouvez réemployer des extraits du texte officiel à condition de mentionner clairement des liens vers
+                <a href="https://paizo.com/" title="Paizo Publishing" target="_blank">Paizo Publishing</a>,
+                <a href="https://black-book-editions.fr/" title="Black Book Editions" target="_blank">Black Book Editions</a> et
+                <a href="https://www.pathfinder-fr.org/" title="Pathfinder-FR" target="_blank">Pathfinder-FR</a>
+              </p>
+              <p>
+                Ce site se base sur les licences
+                <a href="/Ogl" title="Open Game License" target="_blank">Open Game License</a> et
+                <a href="/Pcup" title="Pathfinder Community Use Policy" target="_blank">Pathfinder Community Use Policy</a>.
+              </p>
+            </div>
+          {{/is-article}}
 				</div>
 				{{^is-page-tools-enabled}}{{#is-language-in-content-bottom}}
 					{{#data-lang-btn}}{{>LanguageDropdown}}{{/data-lang-btn}}
