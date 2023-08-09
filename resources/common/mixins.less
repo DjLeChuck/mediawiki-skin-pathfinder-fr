@@ -6,13 +6,20 @@
 
 .mixin-vector-menu-heading() {
 	align-self: center;
-	color: @color-base--subtle;
+	color: @black-coffee;
 	font-weight: normal;
 	cursor: default;
 	// NOTE: Setting these values does not produce a visible border.
 	// That's handled elsewhere with either border-top-style or border-bottom-style.
 	border-color: @border-color-portal-heading;
 	border-width: @border-width-base;
+
+	&:before {
+		content: url(../common/images/sidebar-arrow.png);
+		margin-right: 5px;
+		display: inline-block;
+		transform: translateY(10%);
+	}
 }
 
 // Defines the arrow beside dropdown headings.
