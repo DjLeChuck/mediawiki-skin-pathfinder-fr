@@ -52,7 +52,10 @@
 	.mw-list-item a {
 		// Mirror styles from Dropdown.less
 		.mixin-vector-dropdown-menu-item();
-		color: @color-link;
+
+		&:not(.new) {
+			color: @color-link;
+		}
 	}
 
 	> *:not( :last-child ) {
