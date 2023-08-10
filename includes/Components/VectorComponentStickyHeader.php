@@ -120,7 +120,7 @@ class VectorComponentStickyHeader implements VectorComponent {
 			'id' => 'ca-addsection-sticky-header',
 			'event' => 'addsection-sticky-header',
 			'html-vector-button-icon' => Hooks::makeIcon( 'wikimedia-speechBubbleAdd-progressive' ),
-			'label' => $this->msg( [ 'vector-2022-action-addsection', 'skin-action-addsection' ] )->text(),
+			'label' => $this->msg( [ 'pathfinder-fr-action-addsection', 'skin-action-addsection' ] )->text(),
 			'is-quiet' => true,
 			'tabindex' => '-1',
 			'class' => 'sticky-header-icon mw-ui-primary mw-ui-progressive'

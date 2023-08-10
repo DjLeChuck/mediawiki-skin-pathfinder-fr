@@ -52,8 +52,6 @@ class VectorComponentMainMenu implements VectorComponent {
 		$this->isPinned = $featureManager->isFeatureEnabled( Constants::FEATURE_MAIN_MENU_PINNED );
 
 		if ( $user->isRegistered() ) {
-			$this->optOut = new VectorComponentMainMenuActionOptOut( $skin );
-
 			$isPageToolsEnabled = $featureManager->isFeatureEnabled( Constants::FEATURE_PAGE_TOOLS );
 			if ( $isPageToolsEnabled ) {
 				$this->pinnableHeader = new VectorComponentPinnableHeader(
@@ -73,7 +71,6 @@ class VectorComponentMainMenu implements VectorComponent {
 	 * @inheritDoc
 	 */
 	public function getTemplateData(): array {
-		$action = $this->optOut;
 		$alert = $this->alert;
 		$pinnableHeader = $this->pinnableHeader;
 
@@ -90,7 +87,6 @@ class VectorComponentMainMenu implements VectorComponent {
 		return $pinnableElement->getTemplateData() + $pinnableContainer->getTemplateData() + [
 			'data-portlets-first' => $firstPortlet->getTemplateData(),
 			'array-portlets-rest' => $portletsRest,
-			'data-main-menu-action' => $action ? $action->getTemplateData() : null,
 			// T295555 Add language switch alert message temporarily (to be removed).
 			'data-vector-language-switch-alert' => $alert ? $alert->getTemplateData() : null,
 			'data-pinnable-header' => $pinnableHeader ? $pinnableHeader->getTemplateData() : null,

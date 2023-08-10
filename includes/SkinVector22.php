@@ -419,7 +419,7 @@ class SkinVector22 extends SkinMustache
         $userPage = $isRegistered ? $this->buildPersonalPageItem() : [];
         $components = $tocComponents + [
                 'data-add-topic-button'     => $hasAddTopicButton ? new VectorComponentButton(
-                    $this->msg(['vector-2022-action-addsection', 'skin-action-addsection'])->text(),
+                    $this->msg(['pathfinder-fr-action-addsection', 'skin-action-addsection'])->text(),
                     'ca-addsection',
                     $this->getTitle()->getLocalURL('action=edit&section=new'),
                     'wikimedia-speechBubbleAdd-progressive',
@@ -513,7 +513,7 @@ class SkinVector22 extends SkinMustache
             }
         }
 
-        $this->getSidebarCategories();
+        $sidebarCategories = $this->getSidebarCategories();
 
         return array_merge($parentData, [
             'is-language-in-content'        => $this->isLanguagesInContent(),
@@ -523,7 +523,8 @@ class SkinVector22 extends SkinMustache
             // Cast empty string to null
             'html-subtitle'                 => $parentData['html-subtitle'] === '' ? null : $parentData['html-subtitle'],
             'is-page-tools-enabled'         => $isPageToolsEnabled,
-            'sidebar-categories'            => $this->getSidebarCategories(),
+            'has-sidebar-categories'        => !empty($sidebarCategories),
+            'sidebar-categories'            => $sidebarCategories,
         ]);
     }
 

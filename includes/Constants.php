@@ -14,13 +14,7 @@ final class Constants {
 	 * This is tightly coupled to the ValidSkinNames field in skin.json.
 	 * @var string
 	 */
-	public const SKIN_NAME_MODERN = 'vector-2022';
-
-	/**
-	 * This is tightly coupled to the ValidSkinNames field in skin.json.
-	 * @var string
-	 */
-	public const SKIN_NAME_LEGACY = 'vector';
+	public const SKIN_NAME = 'pathfinder-fr';
 
 	// These are used to provide different default skin for new users.
 	/**
