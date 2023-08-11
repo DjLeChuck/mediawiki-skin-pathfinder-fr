@@ -26,10 +26,11 @@
 	.mw-page-container-inner {
 		display: grid;
 		column-gap: @grid-column-gap;
-		grid-template: ~'min-content min-content min-content 1fr min-content / @{grid-template-column-desktop}';
+		grid-template: ~'min-content min-content min-content min-content 1fr min-content / @{grid-template-column-desktop}';
 		grid-template-areas: 'header header'
 			'siteNotice siteNotice'
 			'mainMenu pageContent'
+			'sideCategories pageContent'
 			'toc pageContent'
 			'footer footer';
 		min-height: 100vh;
@@ -50,6 +51,11 @@
 
 	.mw-header {
 		grid-area: header;
+	}
+
+	#sidebar-categories-container {
+		grid-area: sideCategories;
+		overflow-anchor: none; // T330108
 	}
 
 	.vector-main-menu-container {

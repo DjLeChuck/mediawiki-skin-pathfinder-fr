@@ -61,17 +61,18 @@
 	}
 }
 
-.vector-feature-main-menu-pinned-disabled {
+@media ( max-width: @max-width-tablet ) {
 	#sidebar-categories-container {
 		display: none;
 	}
 }
 
-.vector-feature-main-menu-pinned-enabled {
+@media ( min-width: @min-width-desktop ) {
 	#catlinks {
 		display: none;
 	}
 }
+
 
 // Main menu when unpinned in the dropdown
 #vector-main-menu-unpinned-container .vector-main-menu {
