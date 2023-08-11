@@ -514,6 +514,7 @@ class SkinVector22 extends SkinMustache
         }
 
         $sidebarCategories = $this->getSidebarCategories();
+        $hasSidebarCategories = !empty($sidebarCategories);
 
         return array_merge($parentData, [
             'is-language-in-content'        => $this->isLanguagesInContent(),
@@ -523,8 +524,9 @@ class SkinVector22 extends SkinMustache
             // Cast empty string to null
             'html-subtitle'                 => $parentData['html-subtitle'] === '' ? null : $parentData['html-subtitle'],
             'is-page-tools-enabled'         => $isPageToolsEnabled,
-            'has-sidebar-categories'        => !empty($sidebarCategories),
+            'has-sidebar-categories'        => $hasSidebarCategories,
             'sidebar-categories'            => $sidebarCategories,
+            'no-toc-nor-sidebar-categories' => !$hasSidebarCategories && empty($parentData['data-toc']),
         ]);
     }
 

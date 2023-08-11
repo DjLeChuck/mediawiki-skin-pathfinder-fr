@@ -8,7 +8,7 @@
 	MenuDefinition[] array-portlets-rest
 	main-menu-action data-main-menu-action For displaying an emphasized action in the main menu.
 }}
-<div class="vector-main-menu-container {{^data-toc}}vector-sidebar-container-no-toc{{/data-toc}}">
+<div class="vector-main-menu-container {{#no-toc-nor-sidebar-categories}}vector-sidebar-container-no-toc{{/no-toc-nor-sidebar-categories}}">
 	<div id="mw-navigation">
 		<nav id="mw-panel" class="vector-main-menu-landmark" aria-label="{{msg-vector-site-nav-label}}" role="navigation">
 			{{^is-page-tools-enabled}}
