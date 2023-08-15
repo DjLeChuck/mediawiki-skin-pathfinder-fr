@@ -17,7 +17,18 @@
 {{! `role` is unnecessary but kept to support selectors in any gadgets or user styles and
 	to mitigate a VoiceOver bug. }}
 <footer id="footer" class="mw-footer" role="contentinfo" {{{html-user-language-attributes}}}>
-	{{#data-info}}{{>Footer__row}}{{/data-info}}
-	{{#data-places}}{{>Footer__row}}{{/data-places}}
-	{{#data-icons}}{{>Footer__row}}{{/data-icons}}
+  <div id="footer-left-container">
+    {{#data-info}}{{>Footer__row}}{{/data-info}}
+    <ul id="footer-custom">
+      <li id="footer-info-copyright">La gamme Pathfinder est une création de
+        <a href="https://paizo.com/" target="_blank">Paizo Publishing</a> traduite en français par
+        <a href="https://black-book-editions.fr/">Black Book Editions</a>.
+        <br>
+        Ce site se base sur les licences <a href="https://pf-jdr.djlechuck.fr/wiki/OGL">Open Game License</a>,
+        <a href="https://pf-jdr.djlechuck.fr/wiki/PCUP">Pathfinder Community Use Policy</a> et les conditions
+        d’utilisation BBE.
+      </li>
+    </ul>
+  </div>
+  {{#data-icons}}{{>Footer__row}}{{/data-icons}}
 </footer>
