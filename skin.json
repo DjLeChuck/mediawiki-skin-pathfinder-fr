@@ -215,6 +215,7 @@
 				"toc": false
 			},
 			"styles": [
+				"resources/bootstrap/bootstrap-grid.min.css",
 				"resources/common/common.less",
 				"resources/skins.vector.styles/skin.less"
 			],
