@@ -515,6 +515,7 @@ class SkinVector22 extends SkinMustache
 
         $sidebarCategories = $this->getSidebarCategories();
         $hasSidebarCategories = !empty($sidebarCategories);
+        $currentNs = $this->getTitle()?->getNamespace();
 
         return array_merge($parentData, [
             'is-language-in-content'        => $this->isLanguagesInContent(),
@@ -527,6 +528,14 @@ class SkinVector22 extends SkinMustache
             'has-sidebar-categories'        => $hasSidebarCategories,
             'sidebar-categories'            => $sidebarCategories,
             'no-toc-nor-sidebar-categories' => !$hasSidebarCategories && empty($parentData['data-toc']),
+            'is-ns-root'                    => NS_MAIN === $currentNs,
+            'is-ns-adj'                     => NS_ADJ === $currentNs,
+            'is-ns-av'                      => NS_AVENTURES === $currentNs,
+            'is-ns-gol'                     => NS_GOLARION === $currentNs,
+            'is-ns-pf'                      => NS_PATHFINDER_RPG === $currentNs,
+            'is-ns-pf2'                     => NS_PATHFINDER2 === $currentNs,
+            'is-ns-sf'                      => NS_STARFINDER === $currentNs,
+            'is-ns-res'                     => NS_RESSOURCS === $currentNs,
         ]);
     }
 

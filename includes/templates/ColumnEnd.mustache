@@ -1,10 +1,117 @@
 <div class="vector-column-end">
-	<nav class="vector-page-tools-landmark" aria-label="{{msg-tooltip-p-cactions}}">
-		{{#data-page-tools}}
-		{{>PinnableContainer/Pinned/Open}}
-			{{! Use `#vector-page-tools-pinned-container .vector-page-tools` to target styles at this element}}
-			{{#is-pinned}}{{>PageTools}}{{/is-pinned}}
-		{{>PinnableContainer/Close}}
-		{{/data-page-tools}}
-	</nav>
+  <div id="custom-sidebar" class="vector-menu">
+    <div class="separator">Navigation</div>
+    <ul>
+      <li><a href="./Accueil">Accueil du site</a></li>
+      <li><a href="https://t.co/euqukfofhL?amp=1" class="discord-menu-entry">Serveur Discord</a></li>
+      <li><a href="./Liens">Partenaires</a></li>
+    </ul>
+
+    <div class="vector-menu-heading">Wiki Pathfinder-RPG</div>
+    <p class="subheader">Tout sur les règles officielles de Pathfinder.</p>
+
+    <ul class="two-columns-list">
+      <li><a href="./Pathfinder-RPG:Accueil" title="Bienvenue sur le Wiki Pathfinder-JdR">Accueil</a></li>
+      <li>
+        <a href="./Pathfinder-RPG:Liste_alphabétique_des_monstres" title="Liste alphabétique des monstres">Bestiaire</a>
+      </li>
+      <li><a href="./Pathfinder-RPG:FAQ" title="FAQ non officielle">FAQ</a></li>
+      <li><a href="./Pathfinder-RPG:Aides_de_jeu" title="Aides de jeu pour Pathfinder-RPG">Aides de jeu</a></li>
+      <li><a href="./Pathfinder-RPG:Publications" title="Publications relatives à Pathfinder RPG">Livres</a></li>
+      <li><a href="./Pathfinder-RPG:Glossaire" title="Glossaire anglais/français">Glossaires</a></li>
+    </ul>
+
+    <div class="vector-menu-heading">Wiki Pathfinder 2</div>
+    <p class="subheader">Ressources pour la version 2 de Pathfinder.</p>
+
+    <ul class="two-columns-list">
+      <li><a href="./Pathfinder2:Accueil" title="Wiki de ressources pour Pathfinder 2">Accueil</a></li>
+      <li><a href="./Pathfinder2:AP" title="Aventures officielles pour Pathfinder 2 (campagnes)">Campagnes</a></li>
+      <li>
+        <a href="./Pathfinder2:Publications" title="Publications pour Pathfinder 2 (livres de base)">Autres sorties</a>
+      </li>
+      <li><a href="./Pathfinder2:ADJ" title="Aides de jeu pour Pathfinder 2 (Règles)">Aides de jeu</a></li>
+      <li>
+        <a href="./Pathfinder2:PFS" title="Pathfinder Society / Campagne organisée pour Pathfinder 2">PF Society</a>
+      </li>
+      <li><a href="./Pathfinder2:FAN" title="Créations de fans pour Pathfinder 2">Créations</a></li>
+    </ul>
+
+    <div class="vector-menu-heading">Wiki Golarion</div>
+    <p class="subheader">Tout sur le monde de Golarion:</p>
+
+    <ul class="two-columns-list">
+      <li><a href="./Golarion:Accueil" title="Bienvenue sur le Wiki Golarion">Accueil</a></li>
+      <li><a href="./Golarion:Wayfinder" title="Wayfinder">Wayfinder</a></li>
+      <li><a href="./Golarion:religions_et_philosophies" title="Religions et philosophies">Dieux</a></li>
+      <li><a href="./Golarion:Aides_de_jeu" title="Aides de jeu sur Golarion">Aides de jeu</a></li>
+      <li><a href="./Golarion:Publications" title="Publications sur le monde de Golarion">Livres</a></li>
+      <li><a href="./Golarion:Romans" title="Romans se déroulant sur Golarion">Romans</a></li>
+      <li><a href="./Golarion:JourGolarion:ashx" title="Un jour sur Golarion">Un jour sur Golarion</a></li>
+    </ul>
+
+    <div class="vector-menu-heading">Wiki Ressources</div>
+    <p class="subheader">Aides informatiques, règles maison…</p>
+
+    <ul class="two-columns-list">
+      <li><a href="./Ressources:Accueil" title="Bienvenue sur le Wiki Ressources">Accueil</a></li>
+    </ul>
+
+    <div class="vector-menu-heading">Wiki Aventures</div>
+    <p class="subheader">Aides de jeu et outils pour les MJ.</p>
+
+    <ul class="two-columns-list">
+      <li><a href="./Aventures:Accueil" title="Bienvenue sur le Wiki Aventures">Accueil</a>
+      </li>
+      <li><a href="./Aventures:Campagnes" title="Campagnes officielles (Adventure Paths)">Campagnes</a></li>
+      <li><a href="./Aventures:Présentation_Modules" title="Présentation des modules">Modules</a></li>
+      <li>
+        <a href="./Aventures:Présentation_Pathfinder_Society" title="Présentation de la Pathfinder Society">PF Society</a>
+      </li>
+      <li><a href="./Aventures:Aventures_de_fans" title="Aventures créées par les fans">Aventures</a></li>
+      <li><a href="./Aventures:Liste_PNJ" title="Les PNJs par FP">PNJ</a></li>
+    </ul>
+
+    <div class="vector-menu-heading">Wiki Starfinder</div>
+    <ul class="two-columns-list">
+      <li><a href="./Starfinder:Accueil" title="wiki du Jeu de rôle Starfinder">Accueil</a></li>
+      <li><a href="./Starfinder:ADJ" title="Aides de jeux pour StarFinder">Aides de jeu</a></li>
+    </ul>
+
+    <div class="separator">Aides et guides</div>
+    <ul>
+      <li><a href="./Création">Guide de création</a></li>
+      <li>
+        <a href="./Pathfinder-RPG:Temp" title="Pages temporaires - Sources des informations du site">
+          Sources/Projets d’intégrations
+        </a>
+      </li>
+    </ul>
+
+    <div class="separator">Section</div>
+    <div class="center">
+      <p>Vous êtes dans la section</p>
+      <select data-switch-ns>
+        <option{{#is-ns-main}} selected{{/is-ns-main}} value="./Accueil">&lt;root&gt;</option>
+        <option{{#is-ns-adj}} selected{{/is-ns-adj}} value="./ADJ:Accueil">ADJ</option>
+        <option{{#is-ns-av}} selected{{/is-ns-av}} value="./Aventures:Accueil">Aventures</option>
+        <option{{#is-ns-gol}} selected{{/is-ns-gol}} value="./Golarion:Accueil">Golarion</option>
+        <option{{#is-ns-pf}} selected{{/is-ns-pf}} value="./Pathfinder-RPG:Accueil">Pathfinder-RPG</option>
+        <option{{#is-ns-pf2}} selected{{/is-ns-pf2}} value="./Pathfinder2:Accueil">Pathfinder2</option>
+        <option{{#is-ns-res}} selected{{/is-ns-res}} value="./Ressources:Accueil">Ressources</option>
+        <option{{#is-ns-sf}} selected{{/is-ns-sf}} value="./Starfinder:Accueil">Starfinder</option>
+      </select>
+    </div>
+  </div>
+
+  {{#is-page-tools-enabled}}
+    <nav class="vector-page-tools-landmark" aria-label="{{msg-tooltip-p-cactions}}">
+      {{#data-page-tools}}
+        {{>PinnableContainer/Pinned/Open}}
+        {{! Use `#vector-page-tools-pinned-container .vector-page-tools` to target styles at this element}}
+        {{#is-pinned}}{{>PageTools}}{{/is-pinned}}
+        {{>PinnableContainer/Close}}
+      {{/data-page-tools}}
+    </nav>
+  {{/is-page-tools-enabled}}
 </div>

@@ -7,19 +7,25 @@
 @import 'mediawiki.mixins.less';
 
 @media screen {
-	// Common styles
-	@import './normalize.less';
-	@import './typography.less';
+  // Common styles
+  @import './normalize.less';
+  @import './typography.less';
 
-	// Components
-	@import './components/Indicators.less';
-	@import './components/SiteNotice.less';
-	@import './components/MenuDropdownCheckbox.less';
-	@import './components/SearchBox.less';
-	@import './components/SidebarLogo.less';
-	@import './components/Footer.less';
+  // Cancel Bootstrap container padding
+  .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  // Components
+  @import './components/Indicators.less';
+  @import './components/SiteNotice.less';
+  @import './components/MenuDropdownCheckbox.less';
+  @import './components/SearchBox.less';
+  @import './components/SidebarLogo.less';
+  @import './components/Footer.less';
 }
 
 @media print {
-	@import './print.less';
+  @import './print.less';
 }
