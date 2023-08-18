@@ -11,87 +11,102 @@
 @height-logo-icon: 3.125em;
 
 .mw-header {
-	// A min-height is set to account for projects where no icon is set.
-	min-height: @height-logo-icon;
-	padding: 8px;
-	// Vertical centering of header elements (IE>=11), requires Flexbox.
-	.flex-display();
-	flex-wrap: nowrap;
-	// https://caniuse.com/#search=align-items
-	align-items: center;
+  // A min-height is set to account for projects where no icon is set.
+  min-height: @height-logo-icon;
+  padding: 8px;
+  // Vertical centering of header elements (IE>=11), requires Flexbox.
+  .flex-display();
+  flex-wrap: nowrap;
+  // https://caniuse.com/#search=align-items
+  align-items: center;
 
-	background: url(../common/images/banner.png) center no-repeat;
+  background: url(../common/images/banner.png) center no-repeat;
 
-	.vector-header-start,
-	.vector-header-end {
-		display: flex;
-		align-items: center;
-	}
+  .user-links-collapsible-item a {
+    display: inline-block;
+    color: @color-base;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    background-color: @background-color-secondary--modern;
+    border: 2px solid transparent;
+    margin: 10px;
 
-	.vector-header-end {
-		flex-grow: 1;
-	}
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 
-	@media ( min-width: @min-width-desktop-wide ) {
-		// Ensure search box is aligned with content when search thumbnails or JS is off
-		.vector-feature-page-tools-disabled & .vector-search-box:not( .vector-search-box-auto-expand-width ),
-		.vector-feature-page-tools-disabled:not( .client-js ) & .vector-search-box {
-			padding-left: @size-search-expand;
-		}
+  .vector-header-start,
+  .vector-header-end {
+    display: flex;
+    align-items: center;
+  }
 
-		.client-js.vector-feature-page-tools-enabled & .vector-search-box.vector-search-box-auto-expand-width {
-			// Ensure search box is aligned with content when it autoexpands (i.e. search thumbnails)
-			margin-left: -@size-search-expand;
-		}
-	}
+  .vector-header-end {
+    flex-grow: 1;
+  }
 
-	@media ( min-width: @min-width-desktop ) {
-		.vector-search-box {
-			margin-right: @margin-end-search;
-		}
-	}
+  @media ( min-width: @min-width-desktop-wide ) {
+    // Ensure search box is aligned with content when search thumbnails or JS is off
+    .vector-feature-page-tools-disabled & .vector-search-box:not( .vector-search-box-auto-expand-width ),
+    .vector-feature-page-tools-disabled:not( .client-js ) & .vector-search-box {
+      padding-left: @size-search-expand;
+    }
 
-	@media ( max-width: @max-width-tablet ) {
-		/**
-	 	 * Toggles the visibility of the search box at lower resolutions.
-		 */
-		&.vector-header-search-toggled {
-			.vector-header-start,
-			.search-toggle {
-				display: none;
-			}
+    .client-js.vector-feature-page-tools-enabled & .vector-search-box.vector-search-box-auto-expand-width {
+      // Ensure search box is aligned with content when it autoexpands (i.e. search thumbnails)
+      margin-left: -@size-search-expand;
+    }
+  }
 
-			.vector-search-box-collapses > div {
-				display: block;
-			}
+  @media ( min-width: @min-width-desktop ) {
+    .vector-search-box {
+      margin-right: @margin-end-search;
+    }
+  }
 
-			.vector-search-box {
-				// T284242#7206507: Widen the suggestion results to the edge of the search
-				// button at small resolutions.
-				position: relative;
-				margin-right: @margin-end-search;
+  @media ( max-width: @max-width-tablet ) {
+    /**
+      * Toggles the visibility of the search box at lower resolutions.
+     */
+    &.vector-header-search-toggled {
+      .vector-header-start,
+      .search-toggle {
+        display: none;
+      }
 
-				// Override default max width at lower resolutions
-				> div {
-					max-width: none;
-				}
+      .vector-search-box-collapses > div {
+        display: block;
+      }
 
-				.vector-feature-page-tools-disabled & {
-					margin-left: @padding-horizontal-tabs;
-				}
-			}
+      .vector-search-box {
+        // T284242#7206507: Widen the suggestion results to the edge of the search
+        // button at small resolutions.
+        position: relative;
+        margin-right: @margin-end-search;
 
-			// Make the menu below the search input wider, to match the width of the input+button
-			// rather than just the width of the input
-			.cdx-search-input__input-wrapper {
-				position: static;
-			}
+        // Override default max width at lower resolutions
+        > div {
+          max-width: none;
+        }
 
-			// Since the end button's corner is now right above the menu's corner, don't use a
-			// rounded corner here (T310525)
-			.cdx-typeahead-search--expanded .cdx-search-input__end-button {
-				border-bottom-right-radius: 0;
-			}
-		}
-	}
+        .vector-feature-page-tools-disabled & {
+          margin-left: @padding-horizontal-tabs;
+        }
+      }
+
+      // Make the menu below the search input wider, to match the width of the input+button
+      // rather than just the width of the input
+      .cdx-search-input__input-wrapper {
+        position: static;
+      }
+
+      // Since the end button's corner is now right above the menu's corner, don't use a
+      // rounded corner here (T310525)
+      .cdx-typeahead-search--expanded .cdx-search-input__end-button {
+        border-bottom-right-radius: 0;
+      }
+    }
+  }
 }
