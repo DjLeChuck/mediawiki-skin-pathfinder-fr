@@ -18,6 +18,7 @@ use MediaWiki\Skins\Vector\Components\VectorComponentSearchBox;
 use MediaWiki\Skins\Vector\Components\VectorComponentStickyHeader;
 use MediaWiki\Skins\Vector\Components\VectorComponentTableOfContents;
 use MediaWiki\Skins\Vector\Components\VectorComponentUserLinks;
+use MediaWiki\Title\Title;
 use RuntimeException;
 use SkinMustache;
 use SkinTemplate;
@@ -510,7 +511,7 @@ class SkinVector22 extends SkinMustache
                 'data-ns-selector'          => new VectorComponentNsSelector(
                     $this->getTitle()?->getNamespace() ?? NS_MAIN
                 ),
-                'data-navigation-menu' => new VectorComponentNavigationMenu(),
+                'data-navigation-menu'      => new VectorComponentNavigationMenu(),
             ];
 
         foreach ($components as $key => $component) {
@@ -534,6 +535,8 @@ class SkinVector22 extends SkinMustache
             'has-sidebar-categories'        => $hasSidebarCategories,
             'sidebar-categories'            => $sidebarCategories,
             'no-toc-nor-sidebar-categories' => !$hasSidebarCategories && empty($parentData['data-toc']),
+            'link-ogl'                      => Title::newFromText('OGL')?->getLocalURL(),
+            'link-pcup'                     => Title::newFromText('PCUP')?->getLocalURL(),
         ]);
     }
 
