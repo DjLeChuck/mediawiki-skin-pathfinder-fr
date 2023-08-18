@@ -1,0 +1,8 @@
+<div class="vector-menu-heading">{{title}}</div>
+{{#subtitle}}
+<p class="subheader">{{.}}</p>
+{{/subtitle}}
+
+<ul class="container-fluid row row-cols-2">
+  {{#items}}{{>NavigationMenu/MenuItem}}{{/items}}
+</ul>

@@ -10,6 +10,8 @@ use MediaWiki\Skins\Vector\Components\VectorComponentLanguageButton;
 use MediaWiki\Skins\Vector\Components\VectorComponentLanguageDropdown;
 use MediaWiki\Skins\Vector\Components\VectorComponentMainMenu;
 use MediaWiki\Skins\Vector\Components\VectorComponentMenuVariants;
+use MediaWiki\Skins\Vector\Components\VectorComponentNavigationMenu;
+use MediaWiki\Skins\Vector\Components\VectorComponentNsSelector;
 use MediaWiki\Skins\Vector\Components\VectorComponentPageTools;
 use MediaWiki\Skins\Vector\Components\VectorComponentPinnableContainer;
 use MediaWiki\Skins\Vector\Components\VectorComponentSearchBox;
@@ -505,7 +507,12 @@ class SkinVector22 extends SkinMustache
                         new VectorComponentLanguageButton($ulsLabels['label']) : null,
                     true
                 ) : null,
+                'data-ns-selector'          => new VectorComponentNsSelector(
+                    $this->getTitle()?->getNamespace() ?? NS_MAIN
+                ),
+                'data-navigation-menu' => new VectorComponentNavigationMenu(),
             ];
+
         foreach ($components as $key => $component) {
             // Array of components or null values.
             if ($component) {
@@ -515,7 +522,6 @@ class SkinVector22 extends SkinMustache
 
         $sidebarCategories = $this->getSidebarCategories();
         $hasSidebarCategories = !empty($sidebarCategories);
-        $currentNs = $this->getTitle()?->getNamespace();
 
         return array_merge($parentData, [
             'is-language-in-content'        => $this->isLanguagesInContent(),
@@ -528,14 +534,6 @@ class SkinVector22 extends SkinMustache
             'has-sidebar-categories'        => $hasSidebarCategories,
             'sidebar-categories'            => $sidebarCategories,
             'no-toc-nor-sidebar-categories' => !$hasSidebarCategories && empty($parentData['data-toc']),
-            'is-ns-root'                    => NS_MAIN === $currentNs,
-            'is-ns-adj'                     => NS_ADJ === $currentNs,
-            'is-ns-av'                      => NS_AVENTURES === $currentNs,
-            'is-ns-gol'                     => NS_GOLARION === $currentNs,
-            'is-ns-pf'                      => NS_PATHFINDER_RPG === $currentNs,
-            'is-ns-pf2'                     => NS_PATHFINDER2 === $currentNs,
-            'is-ns-sf'                      => NS_STARFINDER === $currentNs,
-            'is-ns-res'                     => NS_RESSOURCS === $currentNs,
         ]);
     }
 

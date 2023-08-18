@@ -1,74 +1,76 @@
 @import '../../common/variables.less';
 
 .vector-menu {
-	ul {
-		list-style: none;
-		margin: 0;
-	}
+  ul {
+    list-style: none;
+    margin: 0;
+  }
 }
 
 #custom-sidebar {
-	@media ( max-width: @min-width-desktop ) {
-		display: none;
-	}
+  @media ( max-width: @min-width-desktop ) {
+    display: none;
+  }
 
-	width: 250px;
-	font-size: @font-size-base;
-	margin-left: @padding-horizontal-dropdown-menu-item;
+  width: 250px;
+  font-size: @font-size-base;
+  margin-left: @padding-horizontal-dropdown-menu-item;
 
-	a {
-		color: @fuzzy-wuzzy;
-		text-decoration: underline;
-	}
+  a {
+    color: @fuzzy-wuzzy;
+    text-decoration: underline;
+  }
 
-	.discord-menu-entry::after {
-		content: url(../common/images/icons-discord.svg);
-		margin-left: 5px;
-		display: inline-block;
-		vertical-align: middle;
-	}
+  li {
+    position: relative;
+    padding-left: 0.8em;
 
-	.separator {
-		background-color: @black-coffee;
-		color: @white;
-		border: 1px solid @dark-sienna;
-		padding: 3px 5px;
-		font-weight: bold;
-		margin: 0.5em 0;
-	}
+    &:after {
+      content: '';
+      height: .3em;
+      width: .3em;
+      background: @dark-sienna;
+      display: block;
+      position: absolute;
+      transform: rotate(45deg);
+      top: .45em;
+      left: 0;
+    }
+  }
 
-	.vector-menu-heading {
-		.mixin-vector-menu-heading();
+  .discord-menu-entry {
+    a::after {
+      content: url(../common/images/icons-discord.svg);
+      margin-left: 5px;
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
 
-		color: @dark-sienna;
-		font-weight: bold;
-		margin: 4px 0;
-		border-bottom: 1px solid @black-coffee;
-	}
+  .separator {
+    background-color: @black-coffee;
+    color: @white;
+    border: 1px solid @dark-sienna;
+    padding: 3px 5px;
+    font-weight: bold;
+    margin: 0.5em 0;
+  }
 
-	.subheader {
-		font-style: italic;
-		font-size: 0.7em;
-	}
+  .vector-menu-heading {
+    .mixin-vector-menu-heading();
 
-	.two-columns-list {
-		columns: 2;
+    color: @dark-sienna;
+    font-weight: bold;
+    margin: 4px 0;
+    border-bottom: 1px solid @black-coffee;
+  }
 
-		li {
-			position: relative;
-			padding-left: 0.8em;
+  .subheader {
+    font-style: italic;
+    font-size: 0.7em;
+  }
 
-			&:after {
-				content: '';
-				height: .3em;
-				width: .3em;
-				background: @dark-sienna;
-				display: block;
-				position: absolute;
-				transform: rotate(45deg);
-				top: .45em;
-				left: 0;
-			}
-		}
-	}
+  .two-columns-list {
+    columns: 2;
+  }
 }
