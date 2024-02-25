@@ -6,6 +6,7 @@
  */
 
 @import './variables.less';
+@import './mixins.less';
 
 html {
 	font-size: @font-size-root;
@@ -19,8 +20,26 @@ body {
 ul {
 	// `list-style-image` sits on `ul` as it inherits and we don't need to worry about `ol`.
 	// No need for PNG fallback. Fallback is browser default (a smaller, also black, circle).
-	list-style-image: url( images/bullet-icon.svg );
+	list-style-image: url(images/bullet-icon.svg);
 }
+
+.mw-body-content {
+	.BD li {
+		&:after {
+			content: none;
+		}
+	}
+
+	ul {
+		list-style: none;
+		margin: 0;
+
+		li {
+			.mixin-pathfinder-stylized-bullet();
+		}
+	}
+}
+
 
 pre,
 .mw-code {

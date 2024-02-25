@@ -1,4 +1,5 @@
 @import '../../common/variables.less';
+@import '../../common/mixins.less';
 
 .vector-menu {
   ul {
@@ -22,20 +23,7 @@
   }
 
   li {
-    position: relative;
-    padding-left: 0.8em;
-
-    &:after {
-      content: '';
-      height: .3em;
-      width: .3em;
-      background: @dark-sienna;
-      display: block;
-      position: absolute;
-      transform: rotate(45deg);
-      top: .45em;
-      left: 0;
-    }
+    .mixin-pathfinder-stylized-bullet();
   }
 
   .discord-menu-entry {
