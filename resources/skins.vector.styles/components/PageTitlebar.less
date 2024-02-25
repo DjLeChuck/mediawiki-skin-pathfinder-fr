@@ -5,8 +5,7 @@
 
 	// Ensure language button or indicators are positioned to the right even when the title is hidden
 	justify-content: flex-end;
-	// Use box-shadow instead of border to allow border collapsing between titlebar and toolbar
-	box-shadow: 0 1px @border-color-base;
+	border-bottom: solid 2px @black-coffee;
 	align-items: center;
 
 	&-blank {
@@ -18,6 +17,7 @@
 		border: 0;
 
 		color: @black-coffee;
+		font-weight: bold;
 
 		&::before {
 			content: url(../common/images/title-before.png);
